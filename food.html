@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Booking</title>
+    <link rel="stylesheet" href="food.css">
+</head>
+<body>
+    
+    <div class="container">
+        <center><span class="search-container">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="Search.." name="search">
+                <button  type="submit">Search</button>
+            </form>
+        </span></center>
+        <h2>Yummy!! Here you Goo</h2>
+        <div class="food-items">
+            <div class="food-item" data-price="99">
+                <img src="img/burger.jpg" alt="Burger">
+                <p>Pizza - ₹99</p>
+                <button id="button" onclick="addToCart('Burger', 99)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-price="8">
+                <img src="img/biriyani-end-2.jpg" alt="Biriyani">
+                <p>Biriyani - ₹140</p>
+                <button id="button" onclick="addToCart('biriyani', 140)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-price="110">
+                <img src="img/chickennoodles.jpeg" alt="chickennoodles">
+                <p>Chickennoodles - ₹110</p>
+                <button id="button" onclick="addToCart('chickennoodles', 110)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-price="50">
+                <img src="img/colddrinks.jpeg" alt="Drinks">
+                <p>Drinks - ₹50</p>
+                <button id="button" onclick="addToCart('Drinks', 50)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-price="70">
+                <img src="img/eggnoodles.jpeg" alt="Egg Noodles">
+                <p>Egg Noodles - ₹70</p>
+                <button id="button" onclick="addToCart('Egg Noodles', 70)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-price="79">
+                <img src="img/rolls.jpg" alt="Egg Rolles">
+                <p>Egg Noodles - ₹79</p>
+                <button id="button" onclick="addToCart('Egg Rolles', 79)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-price="100">
+                <img src="img/meals.jpg" alt="Meals">
+                <p>Meals - ₹100</p>
+                <button id="button" onclick="addToCart('Meals', 100)">Add to Cart</button>
+            </div>
+            <div class="food-item" data-price="110">
+                <img src="img/Fried-Rice-with-Sauce.jpg" alt="Fried Rice">
+                <p>Fried Rice - ₹110</p>
+                <button id="button" onclick="addToCart('Fried Rice', 110)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="box">
+        <h3>Cart</h3>
+        <div id="cart"></div>
+        <h3>Total: ₹<span id="total">0</span></h3>
+    </div>
+    <div>
+        <button id="button1" onclick="showPopup()">Confirm Booking</button>
+    </div>
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <p3>Booking Confirmed!!</p3> 
+ </div>
+</div>
+    <script src="food.js"></script>
+</body>
+</html>

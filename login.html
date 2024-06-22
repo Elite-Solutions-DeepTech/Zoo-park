@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form action="" name="submit-to-google-sheet">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="name" placeholder="User name" required="">
+					<input type="email" name="email" placeholder="Email" required="">
+          <input type="password" name="password" placeholder="password" required="">
+					<input type="password" name="Re-enter" placeholder="Re enter password" required="">
+					<input class="button" type="submit" value="signup">
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<input class="button" type="submit" value="login">
+				</form>
+			</div>
+	</div>
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbwLkWbYaa0KXkGPNcHlf3HEIL8YXCka5wtQ4Khm34K8nrtbbrCuOij-_aXAopvbswMSGg/exec'
+		const form = document.forms['submit-to-google-sheet']
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => {console.log('Success!', response)
+			alert("registraion sucesfully submitted");
+			form.reset();
+			window.location.href = 'index.html'
+			})
+			.catch(error => console.error('Error!', error.message))
+		})
+	  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking System</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Book Entry Ticket</h1>
+        <form id="bookingForm">
+            
+            <label for="adults">Number of Adults:</label>
+            <input type="number" id="adults" name="adults" min="1" max="5" required>
+
+            <label for="adults">Name of adults</label>
+            <input type="text" id="adults" required>
+
+            <label for="children">Number of Children:</label>
+            <input type="number" id="children" name="children" min="0" max="5" required>
+
+            <label for="adults">Names of Children</label>
+            <input type="text" id="children" required>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <button type="button" id="button1" onclick="calculateTotal()">Total Cost</button>
+        </form>
+        <div id="result"></div>
+        <button id="button2" onclick="showPopup()">Buy Ticket</button>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <p3>Booking Confirmed</p3> 
+     </div>
+    </div>  
+    <script src="booking.js"></script>
+</body>
+</html>
